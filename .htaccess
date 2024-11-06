@@ -1,0 +1,28 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^about-us\.html$ /about-us [R=301,L]
+RewriteRule ^services\.html$ /services [R=301,L]
+RewriteRule ^web-development-in-nepal\.html$ /web-development-in-nepal [R=301,L]
+RewriteRule ^social-media-marketing-in-nepal\.html$ /social-media-marketing-in-nepal [R=301,L]
+RewriteRule ^influencer-marketing-in-nepal\.html$ /influencer-marketing-in-nepal [R=301,L]
+RewriteRule ^graphic-design-in-nepal\.html$ /graphic-design-in-nepal [R=301,L]
+RewriteRule ^photography-videography-in-nepal\.html$ /photography-videography-in-nepal [R=301,L]
+RewriteRule ^team\.html$ /team [R=301,L]
+RewriteRule ^pricing\.html$ /pricing [R=301,L]
+RewriteRule ^faq\.html$ /faq [R=301,L]
+RewriteRule ^contact-us\.html$ /contact-us [R=301,L]
+
+RewriteRule ^index$ / [R=301,L]
+# Internal rewriting to add .html extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+
+
+ErrorDocument 404 /404.html
